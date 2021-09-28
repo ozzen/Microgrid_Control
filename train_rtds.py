@@ -65,14 +65,14 @@ def bound(n, minn, maxn):
 def reset():
     i_d = np.random.uniform(low=low_i_d, high=high_i_d)   # d-current
     i_q = np.random.uniform(low=-high_q, high=high_q)   # q-current
-    i_od = np.random.uniform(low=low_i_d, high=high_i_d)  # d-o/p of current controller
-    i_oq = np.random.uniform(low=-high_q, high=high_q)  # q-o/p of current controller
+    i_od = np.random.uniform(low=low_i_d, high=high_i_d)  # d-o/p of inverter
+    i_oq = np.random.uniform(low=-high_q, high=high_q)  # q-o/p of inverter
     v_od = np.random.uniform(low=vd_ref-vd_fsc-0.087, high=vd_ref+vd_fsc-0.087)  # d-i/p to voltage controller
     v_oq = np.random.uniform(low=0.006, high=0.008)  # q-i/p to voltage controller
     i_ld = np.random.uniform(low=low_i_d, high=high_i_d)  # d-i/p to current controller
     i_lq = np.random.uniform(low=-high_q, high=high_q)  # q-i/p to current controller
-    m_d = np.random.uniform(low=0.35, high=0.40)
-    m_q = np.random.uniform(low=0.05, high=0.07)
+    m_d = np.random.uniform(low=0.35, high=0.40)  # d-o/p to current controller
+    m_q = np.random.uniform(low=0.05, high=0.07)  # q-o/p to current controller
 
     state = np.array([i_d, i_q, i_od, i_oq, v_od, v_oq, i_ld, i_lq, m_d, m_q])
     return state
